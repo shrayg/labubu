@@ -160,8 +160,7 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
               {
                 type: 'input_image',
                 image_url: `data:image/png;base64,${base64Image}`,
-                detail: 'auto',
-                aspect_ratio: '1:1'
+                detail: 'auto'
 
               },
             ],
