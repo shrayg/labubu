@@ -162,7 +162,7 @@
 .nav-button {
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(244, 143, 177, 0.3);
-  border: 3px solid #ec4899; /* <-- Tailwind’s pink-500 hex */
+  border: 3px solid #e7b3cd; /* <-- Tailwind’s pink-500 hex */
   padding: 0.25rem;          /* give the image some breathing room (p-1) */
 }
 

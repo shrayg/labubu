@@ -1,5 +1,5 @@
 import './App.css'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Button } from './components/ui/button'
 import { Card } from './components/ui/card'
 import { Upload, Download, Sparkles } from 'lucide-react'
@@ -25,6 +25,9 @@ function App() {
   const [isGenerating, setIsGenerating] = useState(false)
   const [done, setDone] = useState(false)
   const { toast } = useToast()
+  const handleCopyCA = useCallback(() => {
+    navigator.clipboard.writeText('CA: Soon.')
+  })
 
   const homeRef = useRef(null)
   const generatorRef = useRef(null)
@@ -251,6 +254,7 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
       setDone(true)
     }
   }
+  
 
   const downloadGeneratedImage = () => {
     if (!generatedImage) return
@@ -313,21 +317,21 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
         <div className="mobile-nav flex gap-3">
           <button
             onClick={() => scrollToSection('home')}
-            className="nav-button w-12 h-12 rounded-full overflow-hidden border-0 bg-transparent p-0"
+            className="nav-button w-12 h-12 rounded-full overflow-hidden border-0 bg-white p-0"
             aria-label="Go to Home"
           >
             <img src={homeIcon} alt="Home" className="w-full h-full object-cover" />
           </button>
           <button
             onClick={() => scrollToSection('generator')}
-            className="nav-button w-12 h-12 rounded-full overflow-hidden border-0 bg-transparent p-0"
+            className="nav-button w-12 h-12 rounded-full overflow-hidden border-0 bg-white p-0"
             aria-label="Go to Generator"
           >
             <img src={generatorIcon} alt="Generator" className="w-full h-full object-cover" />
           </button>
           <button
             onClick={() => scrollToSection('gallery')}
-            className="nav-button w-12 h-12 rounded-full overflow-hidden border-0 bg-transparent p-0"
+            className="nav-button w-12 h-12 rounded-full overflow-hidden border-0 bg-white p-0"
             aria-label="Go to Gallery"
           >
             <img src={galleryIcon} alt="Gallery" className="w-full h-full object-cover" />
@@ -346,23 +350,9 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
               className="mx-auto title-image drop-shadow-2xl"
             />
           </div>
-          
-          {/* Welcome Message */}
-          <div className="stitched-border bg-card card-content mb-6 md:mb-8 lg:mb-12 max-w-2xl mx-auto">
-            <h2 className="welcome-title font-bold text-primary mb-3 md:mb-4">
-              Welcome to the magical world of Labubu's Smile!
-            </h2>
-            <p className="welcome-text text-muted-foreground">
-              Create your very own Labubu character with our AI generator! 
-              <br />
-              Upload any image and watch as it transforms into a unique Labubu design.
-              <br />
-              Join our community and explore the gallery of amazing Labubus created by others.
-            </p>
-          </div>
 
           {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8 lg:mb-12 justify-center">
             <Button
               onClick={() => scrollToSection('generator')}
               size="lg"
@@ -380,21 +370,54 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
               View Gallery
             </Button>
             <Button
-    asChild
-    size="lg"
-    variant="outline"
-    className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white action-button rounded-full"
-  >
-    <a
-      href="https://x.com/i/communities/1942335061379981670/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {/* You can use a Twitter icon here if you have one */}
-      Twitter
-    </a>
-  </Button>
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white action-button rounded-full"
+            >
+              <a
+                href="https://x.com/i/communities/1942335061379981670/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {/* You can use a Twitter icon here if you have one */}
+                Twitter
+              </a>
+            </Button>
           </div>
+          
+          {/* Welcome Message */}
+          <div className="stitched-border bg-card card-content mb-6 md:mb-8 lg:mb-12 max-w-2xl mx-auto">
+            <h2 className="welcome-title font-bold text-primary mb-3 md:mb-4">
+              Welcome to the magical world of Labubu's!
+            </h2>
+            <p className="welcome-text text-muted-foreground">
+              <b>Create your very own Labubu character</b> with our AI generator! 
+              <br />
+              Upload any image and watch as it transforms into a unique Labubu design.
+              <br />
+              <b>Join our community</b> and explore <b>the gallery</b> of amazing Labubus created by others.
+              <br />
+              <br />
+              
+            </p>
+          </div>
+
+          
+          { /* CA*/}
+          <div className="stitched-border bg-card card-content mb-6 md:mb-8 lg:mb-12 max-w-2xl mx-auto">
+            <p
+              onClick={handleCopyCA}
+              className="welcome-text text-muted-foreground cursor-pointer"
+            >
+              <b>CA:</b> Soon.
+              <br />
+              <span className="text-xs italic text-gray-500">Click to copy</span>
+            </p>
+          </div>
+
+
+          
         </div>
       </section>
 
