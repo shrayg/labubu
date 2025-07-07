@@ -406,7 +406,7 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
 
           
           { /* CA*/}
-          <div className="stitched-border bg-card card-content mb-6 md:mb-8 lg:mb-12 max-w-2xl mx-auto">
+          <div className="stitched-border bg-card card-content max-w-2xl mx-auto">
             <p
               onClick={handleCopyCA}
               className="welcome-text text-muted-foreground cursor-pointer"
