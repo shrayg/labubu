@@ -379,6 +379,21 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
             >
               View Gallery
             </Button>
+            <Button
+    asChild
+    size="lg"
+    variant="outline"
+    className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white action-button rounded-full"
+  >
+    <a
+      href="https://x.com/i/communities/1942335061379981670/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {/* You can use a Twitter icon here if you have one */}
+      Twitter
+    </a>
+  </Button>
           </div>
         </div>
       </section>
