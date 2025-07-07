@@ -26,7 +26,7 @@ function App() {
   const [done, setDone] = useState(false)
   const { toast } = useToast()
   const handleCopyCA = useCallback(() => {
-    navigator.clipboard.writeText('CA: Soon.')
+    navigator.clipboard.writeText('9ckL51ZbpqdzosCH2xcLsNfPy7hiZxbDZnz2cdcBCnMv')
   })
 
   const homeRef = useRef(null)
@@ -411,7 +411,7 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
               onClick={handleCopyCA}
               className="welcome-text text-muted-foreground cursor-pointer"
             >
-              <b>CA:</b> Soon.
+              <b>CA:</b> 9ckL51ZbpqdzosCH2xcLsNfPy7hiZxbDZnz2cdcBCnMv
               <br />
               <span className="text-xs italic text-gray-500">Click to copy</span>
             </p>
