@@ -26,7 +26,7 @@ function App() {
   const [done, setDone] = useState(false)
   const { toast } = useToast()
   const handleCopyCA = useCallback(() => {
-    navigator.clipboard.writeText('J7zftavzp3nW9hCWdMTjiAZ4883bsjZhXohbxcDTbonk')
+    navigator.clipboard.writeText(' CA ')
   })
 
   const homeRef = useRef(null)
@@ -376,7 +376,7 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
               className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white action-button rounded-full"
             >
               <a
-                href="https://x.com/i/communities/1942335061379981670/"
+                href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -410,7 +410,7 @@ Ensure the final result looks like a high-quality vinyl toy photo—crisp edges,
               onClick={handleCopyCA}
               className="welcome-text text-muted-foreground cursor-pointer"
             >
-              <b>CA:</b> J7zftavzp3nW9hCWdMTjiAZ4883bsjZhXohbxcDTbonk
+              <b>CA:</b> 
               <br />
               <span className="text-xs italic text-gray-500">Click to copy</span>
             </p>
